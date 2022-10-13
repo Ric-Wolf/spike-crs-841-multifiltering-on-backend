@@ -22,7 +22,7 @@
     <form class="p-3" id="group">
       <div class="row justify-content-center">
         <div class="col-4">
-          <label id="dp0_lab">{{all_columns[0][0] |title}}</label>
+          <label id="dp0_lab">Select a team {{all_columns[0][0] |title}}</label>
           <select class="form-control" id="dp0">
             {% for o in all_columns[0][1] %}
             <option value="{{ o }}">{{ o }}</option>
@@ -30,7 +30,7 @@
           </select>
         </div>
         <div class="col-4">
-          <label id="dp1_lab">{{all_columns[1][0]|title}}</label>
+          <label id="dp1_lab">Select a spoken {{all_columns[1][0]|title}}</label>
           <select class="form-control" id="dp1">
             {% for o in all_columns[1][1] %}
             <option value="{{ o }}">{{ o }}</option>
@@ -38,7 +38,7 @@
           </select>
         </div>
         <div class="col-4">
-          <label id="dp2_lab">{{all_columns[2][0]|title}}</label>
+          <label id="dp2_lab">Select the birth {{all_columns[2][0]|title}}</label>
           <select class="form-control" id="dp2">
             {% for o in all_columns[2][1] %}
             <option value="{{ o }}">{{ o }}</option>
