@@ -1,4 +1,3 @@
-from stat import FILE_ATTRIBUTE_NO_SCRUB_DATA
 from typing import Dict
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
@@ -85,7 +84,8 @@ def update_dropdown():
         is_filtered_columns[col[0]] = False
 
     call = request.args.get("call", type=str)
-    selected_value = request.args.get(call, type=str)
+
+    selected_value = request.args.get(str(call), type=str)
 
     if call == "reset":
         filter_data.set_filtering(False)
@@ -103,7 +103,7 @@ def update_dropdown():
     # selected_country = request.args.get_filter("country", type=str)
 
     updated_columns = columns
-    if call not in ("reset"):
+    if call != "reset":
         to_filter = filter_data.get_filter()
         output_txt = str(to_filter)
         for key, value in to_filter.items():

@@ -1,0 +1,9 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "python.venvPath": "/Users/rrico/.local/share/virtualenvs/",
+    "python.pythonPath": "/Users/rrico/.local/share/virtualenvs/CRS-816-spike-Dinamic_dropdowns-LvmRDice",
+    "python.analysis.extraPaths": [
+        "app",
+        "another/path/etc"
+    ]
+}
