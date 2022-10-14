@@ -12,6 +12,9 @@
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{
+      url_for('static',filename='css/styles.css') }}">
+
 
   </head>
 
@@ -22,25 +25,25 @@
     <form class="p-3" id="group">
       <div class="row justify-content-center">
         <div class="col-4">
-          <label id="dp0_lab">Select a team {{all_columns[0][0] |title}}</label>
+          <label id="dp0_lab">Select a team member</label>
           <select class="form-control" id="dp0">
-            {% for o in all_columns[0][1] %}
+            {% for o in all_columns["member"] %}
             <option value="{{ o }}">{{ o }}</option>
             {% endfor %}
           </select>
         </div>
         <div class="col-4">
-          <label id="dp1_lab">Select a spoken {{all_columns[1][0]|title}}</label>
+          <label id="dp1_lab">Select a spoken language</label>
           <select class="form-control" id="dp1">
-            {% for o in all_columns[1][1] %}
+            {% for o in all_columns["language"] %}
             <option value="{{ o }}">{{ o }}</option>
             {% endfor %}
           </select>
         </div>
         <div class="col-4">
-          <label id="dp2_lab">Select the birth {{all_columns[2][0]|title}}</label>
+          <label id="dp2_lab">Select the country of birth</label>
           <select class="form-control" id="dp2">
-            {% for o in all_columns[2][1] %}
+            {% for o in all_columns["country"] %}
             <option value="{{ o }}">{{ o }}</option>
             {% endfor %}
           </select>
@@ -58,12 +61,31 @@
         <div class="col-4"></div>
       </div>
       <br>
-      <div class="row text-center">
+      <div class="row">
         <div class="col-4"></div>
-        <div class="col-4 border border-info text-secondary rounded">
-          <h4 id="print_txt">
-            Here we display some output based on the selection
-          </h4>
+        <div class="col-4 border border-dark rounded table-sm bg-white">
+          <table class="table text-black">
+            <thead class="text-info">
+              <tr>
+                <th scope="col">Dropdown</th>
+                <th scope="col" class="text-right">Filter</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Members</th>
+                <td id="print_members">None</td>
+              </tr>
+              <tr>
+                <th scope="row">Languages</th>
+                <td id="print_languages">None</td>
+              </tr>
+              <tr>
+                <th scope="row">Countries</th>
+                <td id="print_countries">None</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div class="col-4"></div>
       </div>
